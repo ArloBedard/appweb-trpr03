@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useBugsStore } from '../stores/bugsStore'
+import { useBugStore } from '../stores/bugStore'
+import { useCategoryStore } from '../stores/categoryStore'
 
-const bugsStore = useBugsStore()
+const bugsStore = useBugStore()
+const categoryStore = useCategoryStore()
 
-const categories = computed(() => bugsStore.categories)
-
+const categories = computed(() => categoryStore.categories)
 const bugs = computed(() => bugsStore.bugs)
 
 </script>
