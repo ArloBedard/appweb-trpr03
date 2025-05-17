@@ -28,31 +28,11 @@ export const useProfileStore = defineStore('profileStoreId', () => {
     }
   }
 
-  async function createTester(email: string, password: string, name: string) {
-    try {
-      onError.value = false
-      const role = 'tester'
-
-      const userData = await userService.registerUser(email, password, name, role)
-      console.log('User created successfully:', userData)
-
-      const profile = { email, name, role }
-      _initializeProfile(profile)
-
-      return userData
-    } catch (error) {
-      onError.value = true
-
-      throw error
-    }
-  }
-
   return {
     email,
     name,
     role,
     onError,
-    getProfile,
-    createTester
+    getProfile
   }
 })

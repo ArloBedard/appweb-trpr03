@@ -30,7 +30,18 @@ async function registerUser(email: string, password: string, name: string, role:
   }
 }
 
+async function getUsers() {
+  try {
+    const { data } = await axiosAuth.get(`${API_URL}/users`)
+
+    return data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
+}
+
 export const userService = {
   getUserById,
-  registerUser
+  registerUser,
+  getUsers
 }

@@ -6,6 +6,20 @@
       "name": "Emmett Brown",
       "role": "lead",
       "id": 1
+    },
+    {
+      "email": "tester1@test.com",
+      "password": "$2a$10$scjJ6kzVZ0m8w42mLi83feumy7eJpTJitoNrpCOCrE7hvSqxtYpJy",
+      "name": "John Doe",
+      "role": "tester",
+      "id": 2
+    },
+    {
+      "email": "tester2@test.com",
+      "password": "$2a$10$u5.YHeJEtWYiDdcz2SEmKuNLn8KyFHfyO..qzbEXkzzQSLo3ahViW",
+      "name": "Jane Doe",
+      "role": "tester",
+      "id": 3
     }
   ],
   "comments": [
