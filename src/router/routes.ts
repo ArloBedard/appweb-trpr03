@@ -2,6 +2,7 @@ import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import LoginView from '../views/LoginView.vue'
 import TestersView from '../views/TestersView.vue'
+import BugsView from '../views/BugsView.vue'
 
 const routes = [
   {
@@ -31,6 +32,14 @@ const routes = [
     path: '/testers',
     name: 'Testers',
     component: TestersView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/bugs',
+    name: 'Bugs',
+    component: BugsView,
     meta: {
       requiresAuth: true
     }

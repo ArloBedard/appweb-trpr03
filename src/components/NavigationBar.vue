@@ -37,6 +37,10 @@ function logout() {
           :to="{ name: 'Testers' }">
           Testeurs
         </RouterLink>
+        <RouterLink class="nav-link" :class="{ active: $route.name == 'Bugs' }" v-if="isLoggedIn"
+          :to="{ name: 'Bugs' }">
+          Bogues
+        </RouterLink>
       </div>
       <div class="d-flex">
         <div class="navbar-nav ml-auto">

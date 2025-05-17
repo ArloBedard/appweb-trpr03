@@ -22,11 +22,68 @@
       "id": 3
     }
   ],
-  "comments": [
+  "categories": [
+    {
+      "name": "Visuel",
+      "id": 1
+    },
+    {
+      "name": "Gameplay",
+      "id": 2
+    },
+    {
+      "name": "Audio",
+      "id": 3
+    },
+    {
+      "name": "Test",
+      "id": 4
+    }
+  ],
+  "bugs": [
     {
       "userId": 1,
-      "comment": "J'ai inventé la machine à voyager dans le temps.",
+      "title": "Texte coupé dans le menu principal",
+      "description": "Le texte 'Nouvelle Partie' est tronqué lorsqu'on utilise une résolution 1024x768.",
+      "steps": "1. Lancer le jeu\n2. Aller au menu principal\n3. Choisir une résolution faible\n4. Observer le texte",
+      "categoryId": 1,
+      "platform": "PC",
+      "priority": 3,
+      "solved": false,
       "id": 1
+    },
+    {
+      "userId": 2,
+      "title": "Le personnage traverse les murs",
+      "description": "En courant vers le coin nord-ouest de la carte, le personnage passe à travers le mur.",
+      "steps": "1. Se rendre au coin nord-ouest de la carte\n2. Courir contre le mur\n3. Le personnage passe au travers",
+      "categoryId": 2,
+      "platform": "PC",
+      "priority": 1,
+      "solved": false,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "title": "Bug de collision avec les ennemis volants",
+      "description": "Les ennemis volants ne détectent pas le joueur correctement.",
+      "steps": "1. Approcher un ennemi volant sans bouger\n2. Observer qu'il n'attaque pas\n3. Attendre et constater l'inaction",
+      "categoryId": 2,
+      "platform": "PS5",
+      "priority": 2,
+      "solved": false,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "title": "Audio manquant lors des cinématiques",
+      "description": "Aucune musique ou effet sonore ne joue pendant la première cinématique.",
+      "steps": "1. Lancer une nouvelle partie\n2. Laisser la cinématique se dérouler\n3. Observer l'absence de son",
+      "categoryId": 3,
+      "platform": "Xbox",
+      "priority": 2,
+      "solved": true,
+      "id": 4
     }
   ]
 }

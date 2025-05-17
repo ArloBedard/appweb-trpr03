@@ -2,5 +2,6 @@
   "/users": "/664/users",
   "/600/users/:id": "/users/:id",
   "/640/users/:id": "/users/:id",
-  "/comments*": "/644/comments$1"
+  "/categories*": "/660/categories",
+  "/660/bugs*": "/660/bugs"
 }
