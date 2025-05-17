@@ -40,8 +40,19 @@ async function getUsers() {
   }
 }
 
+async function deleteUser(userId: any) {
+  try {
+    const { data } = await axiosAuth.delete(`${API_URL}/users/${userId}`)
+
+    return data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
+}
+
 export const userService = {
   getUserById,
   registerUser,
-  getUsers
+  getUsers,
+  deleteUser
 }

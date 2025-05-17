@@ -1,12 +1,23 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import AddTesterComponent from '../components/AddTesterComponent.vue'
 import TesterComponent from '../components/TesterComponent.vue'
 import { useTesterStore } from '../stores/testerStore'
 
 const testerStore = useTesterStore()
 
+const testers = computed(() => testerStore.testers)
 
-console.log(testerStore.testers)
+async function handleDeleteTester(id: string) {
+    try {
+        await testerStore.deleteTester(id)
+        if (testerStore.onError) {
+            confirm("Une erreur s'est produite lors de la suppression du tester : ${error}")
+        }
+    } catch (error) {
+        confirm("Erreur critique lors de l'accès au store.")
+    }
+}
 </script>
 
 <template>
@@ -15,10 +26,11 @@ console.log(testerStore.testers)
         <div class="col-6 p-2 m-3">
             <h2>Testeurs</h2>
             <div class="row row-cols-3">
-                <TesterComponent v-for="tester in testerStore.testers" :key="tester.email" :tester="tester" />
+                <TesterComponent v-for="tester in testers" :key="tester.email" :tester="tester"
+                    @delete-tester="handleDeleteTester" />
             </div>
         </div>
-        <div class="col-5 p-2 m-3">
+        <div class="col-4 p-2 m-3">
             <AddTesterComponent />
         </div>
     </div>

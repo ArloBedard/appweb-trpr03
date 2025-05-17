@@ -16,6 +16,7 @@ export const useTesterStore = defineStore('testerStoreId', () => {
       const userData = await userService.registerUser(email, password, name, role)
 
       const tester: Tester = {
+        id: userData.user?.id,
         email: email,
         name: name,
         role: role,
@@ -25,6 +26,17 @@ export const useTesterStore = defineStore('testerStoreId', () => {
       testers.value.push(tester)
 
       return userData
+    } catch (error) {
+      onError.value = true
+      throw error
+    }
+  }
+
+  async function deleteTester(id: string) {
+    try {
+      onError.value = false
+      const data = await userService.deleteUser(id)
+      testers.value = testers.value.filter((tester) => tester.id !== id)
     } catch (error) {
       onError.value = true
       throw error
@@ -42,10 +54,9 @@ export const useTesterStore = defineStore('testerStoreId', () => {
         name: user.name,
         email: user.email,
         role: user.role,
-        password: user.password
+        password: user.password,
+        id: user.id
       }))
-
-      return
     } catch (error) {
       onError.value = true
       throw error
@@ -55,6 +66,7 @@ export const useTesterStore = defineStore('testerStoreId', () => {
   return {
     onError,
     createTester,
-    testers
+    testers,
+    deleteTester
   }
 })
