@@ -13,6 +13,19 @@ async function getCategories() {
   }
 }
 
+async function createCategory(name: string) {
+  try {
+    const response = await axiosAuth.post(`${API_URL}/categories`, {
+      name
+    })
+
+    return response.data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
+}
+
 export const categoryService = {
-  getCategories
+  getCategories,
+  createCategory
 }

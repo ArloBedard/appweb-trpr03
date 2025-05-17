@@ -34,6 +34,10 @@
     {
       "name": "Audio",
       "id": 3
+    },
+    {
+      "name": "Test",
+      "id": 4
     }
   ],
   "bugs": [
@@ -45,7 +49,7 @@
       "categoryId": 1,
       "platform": "PC",
       "priority": 3,
-      "solved": true,
+      "solved": false,
       "id": 1
     },
     {
@@ -56,7 +60,7 @@
       "categoryId": 2,
       "platform": "PC",
       "priority": 1,
-      "solved": true,
+      "solved": false,
       "id": 2
     },
     {

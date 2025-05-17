@@ -23,7 +23,25 @@ export const useCategoryStore = defineStore('categoryStoreId', () => {
     }
   }
 
+  async function createCategory(name: string) {
+    try {
+      onError.value = false
+      const data = await categoryService.createCategory(name)
+
+      const category: Category = {
+        id: data.user?.id,
+        name: name
+      }
+
+      categories.value.push(category)
+    } catch (error) {
+      onError.value = true
+    }
+  }
+
   return {
-    categories
+    categories,
+    onError,
+    createCategory
   }
 })
