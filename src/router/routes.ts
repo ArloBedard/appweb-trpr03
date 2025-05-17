@@ -1,6 +1,7 @@
 import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import LoginView from '../views/LoginView.vue'
+import TestersView from '../views/TestersView.vue'
 
 const routes = [
   {
@@ -25,6 +26,14 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: LoginView
+  },
+  {
+    path: '/testers',
+    name: 'Testers',
+    component: TestersView,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/:pathMatch(.*)*',

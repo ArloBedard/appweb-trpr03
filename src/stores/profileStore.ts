@@ -7,10 +7,12 @@ export const useProfileStore = defineStore('profileStoreId', () => {
   const email = ref('')
   const name = ref('')
   const onError = ref(false)
+  const role = ref('')
 
-  function _initializeProfile(profile: { email: string; name: string }) {
+  function _initializeProfile(profile: { email: string; name: string; role: string }) {
     email.value = profile.email
     name.value = profile.name
+    role.value = profile.role
     onError.value = false
   }
 
@@ -26,10 +28,11 @@ export const useProfileStore = defineStore('profileStoreId', () => {
     }
   }
 
-  return { 
-    email, 
-    name, 
-    onError, 
-    getProfile 
+  return {
+    email,
+    name,
+    role,
+    onError,
+    getProfile
   }
 })
