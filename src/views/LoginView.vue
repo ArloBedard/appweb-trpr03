@@ -30,7 +30,7 @@ const login = async () => {
     email: email.value,
     password: password.value
   });
-  
+
   if (!authStore.authServiceError) {
     router.push({ name: 'Profile' });
   }
@@ -52,26 +52,14 @@ const isRequired = value => !value ? 'Ce champ est requis.' : true;
             <!-- avec VeeValidate, on remplace les input par Field et on lui donne un nom -->
             <!-- le nom est ensuite utilisé pour afficher les messages d'erreur dans ErrorMessage -->
             <!-- le message d'erreur provient de la règle isRequired déclarée en haut -->
-            <Field
-              class="form-control"
-              id="email-input"
-              name="email-input"
-              type="email"
-              :rules="isRequired"
-              v-model="email"
-            />
+            <Field class="form-control" id="email-input" name="email-input" type="email" :rules="isRequired"
+              v-model="email" />
             <ErrorMessage class="text-danger" name="email-input" />
           </div>
           <div class="mb-3">
             <label class="form-label" for="password-input">Mot de passe</label>
-            <Field
-              class="form-control"
-              id="password-input"
-              name="password-input"
-              type="password"
-              :rules="isRequired"
-              v-model="password"
-            />
+            <Field class="form-control" id="password-input" name="password-input" type="password" :rules="isRequired"
+              v-model="password" />
             <ErrorMessage class="text-danger" name="password-input" />
           </div>
           <div class="p-3 mb-2 bg-danger text-white" v-if="authServiceError">

@@ -7,6 +7,7 @@ const profileStore = useProfileStore()
 const name = computed(() => profileStore.name)
 const email = computed(() => profileStore.email)
 const onError = computed(() => profileStore.onError)
+const role = computed(() => profileStore.role)
 
 onMounted(async () => {
   try {

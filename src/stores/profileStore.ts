@@ -7,10 +7,12 @@ export const useProfileStore = defineStore('profileStoreId', () => {
   const email = ref('')
   const name = ref('')
   const onError = ref(false)
+  const role = ref('')
 
-  function _initializeProfile(profile: { email: string; name: string }) {
+  function _initializeProfile(profile: { email: string; name: string; role: string }) {
     email.value = profile.email
     name.value = profile.name
+    role.value = profile.role
     onError.value = false
   }
 
@@ -26,10 +28,31 @@ export const useProfileStore = defineStore('profileStoreId', () => {
     }
   }
 
-  return { 
-    email, 
-    name, 
-    onError, 
-    getProfile 
+  async function createTester(email: string, password: string, name: string) {
+    try {
+      onError.value = false
+      const role = 'tester'
+
+      const userData = await userService.registerUser(email, password, name, role)
+      console.log('User created successfully:', userData)
+
+      const profile = { email, name, role }
+      _initializeProfile(profile)
+
+      return userData
+    } catch (error) {
+      onError.value = true
+
+      throw error
+    }
+  }
+
+  return {
+    email,
+    name,
+    role,
+    onError,
+    getProfile,
+    createTester
   }
 })

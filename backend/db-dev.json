@@ -4,7 +4,59 @@
       "email": "test@test.com",
       "password": "$2a$10$/U4TD6TdllwpkXLdBzoagepGDpOGcRFTS6VHAnYGNeCKsuhpEWmX2",
       "name": "Emmett Brown",
+      "role": "lead",
       "id": 1
+    },
+    {
+      "email": "test1@test.com",
+      "password": "$2a$10$7xdscuUoKSS.FyFaq.jiHOSliD3cLGU6p6edHQySbYlLWqwjvftD6",
+      "name": "",
+      "role": "tester",
+      "id": 2
+    },
+    {
+      "email": "testtesttest@test.com",
+      "password": "$2a$10$bVrkKQQ.UW1ihsEZrNrRJe9ckC84OoWlz3cybKPRPl6SF2ybNlbS2",
+      "name": "",
+      "id": 3
+    },
+    {
+      "email": "testestest@email.com",
+      "password": "$2a$10$cwxfuFVInYVdXKbRC12oQeEpDzfqOGPle1IAkIxnYnc54vuTyIWJS",
+      "id": 4
+    },
+    {
+      "email": "adadasdasd@email.com",
+      "password": "$2a$10$nmdNE/KczJA0u4lk3NXsy.cd2afl6cfoMaTVXVnuVmjxh3Rbj5ydO",
+      "id": 5
+    },
+    {
+      "email": "sersfse@test.com",
+      "password": "$2a$10$4YvHu1pa54HVPXVLInJ/IOHO3FqaSrGuMRhD4ndPNHUzbKGjxudga",
+      "name": "",
+      "role": "tester",
+      "id": 6
+    },
+    {
+      "email": "direct1747448119419@example.com",
+      "password": "$2a$10$XrglHlwV/JpluIa5NO4bcOw330C5eFaRnUSxCLTuCdpHCdww/FC6S",
+      "name": "Direct User",
+      "role": "tester",
+      "id": 7
+    },
+    {
+      "email": "mayatimi12@gmail.com",
+      "password": "$2a$10$1HL6hI2p6KeFMHm5YZ59tellNTHMcLzN6rBQLuejkeo2MdO7FCpL.",
+      "name": "setst",
+      "role": "tester",
+      "id": 8
+    },
+    {
+      "email": "mayatimi12q@gmail.com",
+      "password": "$2a$10$eQzAu7bOIgJP6.D8XWcBUOzLS6S.CzGoDsZeXdMU52p99K0j1uuo2",
+      "name": "werwe",
+      "role": "tester",
+      "id": 9
     }
   ],
   "comments": [
