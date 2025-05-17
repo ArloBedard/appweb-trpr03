@@ -3,5 +3,5 @@
   "/600/users/:id": "/users/:id",
   "/640/users/:id": "/users/:id",
   "/categories*": "/644/categories",
-  "/bugs*": "/644/bugs"
+  "/660/bugs*": "/660/bugs"
 }

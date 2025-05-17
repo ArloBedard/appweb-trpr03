@@ -13,6 +13,27 @@ async function getBugs() {
   }
 }
 
+async function updateBug(id: any, bug: any) {
+  try {
+    const response = await axiosAuth.put(`${API_URL}/660/bugs/${id}`, {
+      userId: bug.userId,
+      title: bug.title,
+      description: bug.description,
+      steps: bug.steps,
+      categoryId: bug.category,
+      platform: bug.platform,
+      priority: bug.priority,
+      solved: true,
+      id: bug.id
+    })
+
+    return response.data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
+}
+
 export const bugService = {
-  getBugs
+  getBugs,
+  updateBug
 }

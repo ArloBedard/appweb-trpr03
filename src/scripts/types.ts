@@ -12,7 +12,7 @@ export interface Category {
 }
 
 export interface Bug {
-  id: number
+  id: string
   userId: number
   title: string
   description: string

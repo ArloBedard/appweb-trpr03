@@ -45,7 +45,7 @@
       "categoryId": 1,
       "platform": "PC",
       "priority": 3,
-      "solved": false,
+      "solved": true,
       "id": 1
     },
     {
@@ -56,7 +56,7 @@
       "categoryId": 2,
       "platform": "PC",
       "priority": 1,
-      "solved": false,
+      "solved": true,
       "id": 2
     },
     {

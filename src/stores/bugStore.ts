@@ -30,8 +30,36 @@ export const useBugStore = defineStore('bugStoreId', () => {
     }
   }
 
+  async function solveBug(id: string) {
+    try {
+      onError.value = false
+      const bugToSolve: Bug | undefined = bugs.value.find((bug) => bug.id === id)
+
+      const updatedBug = await bugService.updateBug(id, bugToSolve)
+
+      const index = bugs.value.findIndex((bug) => bug.id === updatedBug.id)
+      if (index !== -1) {
+        bugs.value[index] = {
+          id: updatedBug.id,
+          userId: updatedBug.userId,
+          title: updatedBug.title,
+          description: updatedBug.description,
+          steps: updatedBug.steps,
+          category: updatedBug.categoryId,
+          platform: updatedBug.platform,
+          priority: updatedBug.priority,
+          solved: updatedBug.solved
+        }
+      }
+    } catch (error) {
+      onError.value = true
+      throw error
+    }
+  }
+
   return {
     getBugs,
-    bugs
+    bugs,
+    solveBug
   }
 })

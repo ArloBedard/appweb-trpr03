@@ -1,13 +1,24 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useBugStore } from '../stores/bugStore'
 import { useCategoryStore } from '../stores/categoryStore'
+import UnsolvedBugComponent from '../components/UnsolvedBugComponent.vue'
+import SolvedBugComponent from '../components/SolvedBugComponent.vue'
 
 const bugsStore = useBugStore()
 const categoryStore = useCategoryStore()
 
 const categories = computed(() => categoryStore.categories)
 const bugs = computed(() => bugsStore.bugs)
+
+function handleSolveBug(bugId: string) {
+    bugsStore.solveBug(bugId)
+}
+
+function filteredBugs(categoryId: string, solved: boolean) {
+    return bugs.value.filter(bug => bug.category === categoryId && bug.solved === solved)
+}
+
 
 </script>
 
@@ -27,21 +38,32 @@ const bugs = computed(() => bugsStore.bugs)
                 <div :id="`collapse-${index}`" class="accordion-collapse collapse" data-bs-parent="#bugsAccordion">
                     <div class="accordion-body">
                         <ul class="list-group">
-                            <div v-for="bug in bugs" :key="bug.priority">
-                                <div v-if="bug.category == category.id">
-                                    <li class="list-group-item">
-                                        <strong>{{ bug.title }}</strong> (Priorité {{ bug.priority }})
-                                        <br />
-                                        {{ bug.description }}
-                                    </li>
-                                </div>
-                            </div>
+                            <!-- Non résolus -->
+                            <li class="list-group-item list-group-item-light"
+                                v-if="filteredBugs(category.id, false).length">
+                                <h5>🛠️ Bogues à résoudre</h5>
+                            </li>
+                            <li v-for="bug in filteredBugs(category.id, false)" :key="bug.id" class="list-group-item">
+                                <UnsolvedBugComponent :bug="bug" v-on:solve-bug="handleSolveBug(bug.id)" />
+                            </li>
+
+                            <!-- Résolus -->
+                            <li class="list-group-item list-group-item-light mt-3"
+                                v-if="filteredBugs(category.id, true).length">
+                                <h5>✅ Bogues résolus</h5>
+                            </li>
+                            <li v-for="bug in filteredBugs(category.id, true)" :key="bug.id"
+                                class="list-group-item text-muted" style="opacity: 0.6;">
+                                <SolvedBugComponent :bug="bug" />
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
 </template>
 
 <style></style>
