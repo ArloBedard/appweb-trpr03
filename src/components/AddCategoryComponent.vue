@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { Form, Field, ErrorMessage, defineRule, validate } from 'vee-validate'
 import { required } from '@vee-validate/rules'
-import { useCategoryStore } from '@/stores/categoryStore'
+import { useCategoryStore } from '../stores/categoryStore'
 
 const categoryStore = useCategoryStore()
 
@@ -14,6 +14,11 @@ const isRequired = (value: string) => !value ? 'Ce champ est requis.' : true
 const onError = computed(() => categoryStore.onError)
 
 const createCategory = async () => {
+    const result = await validate({});
+    if (!result.valid) {
+        return;
+    }
+
     try {
         await categoryStore.createCategory(name.value)
         if (onError.value) {

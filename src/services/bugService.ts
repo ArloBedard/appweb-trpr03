@@ -43,8 +43,37 @@ async function deleteBug(bugId: any) {
   }
 }
 
+async function createBug(
+  userId: string,
+  title: string,
+  description: string,
+  steps: string,
+  category: string,
+  platform: string,
+  priority: number,
+  solved: boolean
+) {
+  try {
+    const response = await axiosAuth.post(`${API_URL}/bugs`, {
+      userId: userId,
+      title: title,
+      description: description,
+      steps: steps,
+      categoryId: category,
+      platform: platform,
+      priority: priority,
+      solved: solved
+    })
+
+    return response.data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
+}
+
 export const bugService = {
   getBugs,
   updateBug,
-  deleteBug
+  deleteBug,
+  createBug
 }

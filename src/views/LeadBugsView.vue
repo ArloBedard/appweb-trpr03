@@ -36,7 +36,6 @@ function filteredBugs(categoryId: string, solved: boolean) {
 
     <div class="row">
         <div class="col-7 m-3">
-
             <div class="accordion" id="bugsAccordion">
                 <div v-for="(category, index) in categories">
                     <div class="accordion-item" :id="`heading-${index}`">

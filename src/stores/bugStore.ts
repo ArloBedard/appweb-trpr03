@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { bugService } from '../services/bugService'
 import type { Bug } from '../scripts/types'
+import { useAuthStore } from './authStore'
 
 export const useBugStore = defineStore('bugStoreId', () => {
   const onError = ref(false)
@@ -69,11 +70,55 @@ export const useBugStore = defineStore('bugStoreId', () => {
     }
   }
 
+  async function createBug(
+    title: string,
+    description: string,
+    steps: string,
+    category: string,
+    platform: string,
+    priority: number
+  ) {
+    try {
+      onError.value = false
+      const authStore = useAuthStore()
+      const userId = authStore.getUserId
+
+      const data = await bugService.createBug(
+        userId,
+        title,
+        description,
+        steps,
+        category,
+        platform,
+        priority,
+        false
+      )
+
+      const bug: Bug = {
+        userId,
+        title,
+        description,
+        steps,
+        category,
+        platform,
+        priority,
+        solved: false,
+        id: data.id
+      }
+
+      bugs.value.push(bug)
+    } catch (error) {
+      onError.value = true
+      throw error
+    }
+  }
+
   return {
     getBugs,
     bugs,
     solveBug,
     onError,
-    closeBug
+    closeBug,
+    createBug
   }
 })

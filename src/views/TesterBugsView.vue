@@ -1,8 +1,10 @@
-<script setup lang="ts">import { computed } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { useBugStore } from '@/stores/bugStore'
 import { useCategoryStore } from '@/stores/categoryStore'
 import TesterUnsolvedBugComponent from '../components/TesterUnsolvedBugComponent.vue'
 import TesterSolvedBugComponent from '../components/TesterSolvedBugComponent.vue'
+import AddBugComponent from '../components/AddBugComponent.vue'
 import { useAuthStore } from '@/stores/authStore'
 
 const authStore = useAuthStore()
@@ -35,7 +37,6 @@ async function handleCloseBug(bugId: string) {
     <h1 class="display-4 mb-4">Gestion des bogues</h1>
     <div class="row">
         <div class="col-7 m-3">
-
             <div class="accordion" id="bugsAccordion">
                 <div v-for="(category, index) in categories">
                     <div class="accordion-item" :id="`heading-${index}`">
@@ -76,6 +77,10 @@ async function handleCloseBug(bugId: string) {
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="col-4 m-3">
+            <AddBugComponent />
         </div>
     </div>
 </template>
