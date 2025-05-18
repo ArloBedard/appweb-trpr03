@@ -33,8 +33,14 @@ async function updateBug(id: any, bug: any) {
   }
 }
 
-async function deleteBug(){
-  
+async function deleteBug(bugId: any) {
+  try {
+    const { data } = await axiosAuth.delete(`${API_URL}/bugs/${bugId}`)
+
+    return data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
 }
 
 export const bugService = {

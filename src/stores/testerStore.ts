@@ -36,7 +36,7 @@ export const useTesterStore = defineStore('testerStoreId', () => {
   async function deleteTester(id: string) {
     try {
       onError.value = false
-      const data = await userService.deleteUser(id)
+      await userService.deleteUser(id)
       testers.value = testers.value.filter((tester) => tester.id !== id)
     } catch (error) {
       onError.value = true

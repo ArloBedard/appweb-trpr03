@@ -37,6 +37,10 @@
     {
       "name": "Audio",
       "id": 3
+    },
+    {
+      "name": "test",
+      "id": 4
     }
   ],
   "bugs": [
@@ -59,7 +63,7 @@
       "categoryId": 2,
       "platform": "PC",
       "priority": 1,
-      "solved": false,
+      "solved": true,
       "id": 2
     },
     {
@@ -70,19 +74,8 @@
       "categoryId": 2,
       "platform": "PS5",
       "priority": 2,
-      "solved": false,
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "title": "Audio manquant lors des cinématiques",
-      "description": "Aucune musique ou effet sonore ne joue pendant la première cinématique.",
-      "steps": "1. Lancer une nouvelle partie\n2. Laisser la cinématique se dérouler\n3. Observer l'absence de son",
-      "categoryId": 3,
-      "platform": "Xbox",
-      "priority": 2,
       "solved": true,
-      "id": 4
+      "id": 3
     }
   ]
 }

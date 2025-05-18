@@ -58,13 +58,13 @@ async function handleCloseBug(bugId: string) {
                                     </li>
                                     <li v-for="bug in filteredBugs(category.id, false)" :key="bug.id"
                                         class="list-group-item">
-                                        <TesterUnsolvedBugComponent :bug="bug" " />
+                                        <TesterUnsolvedBugComponent :bug="bug" />
                                     </li>
 
                                     <!-- Résolus -->
                                     <li class=" list-group-item list-group-item-light mt-3"
-                                            v-if="filteredBugs(category.id, true).length">
-                                            <h5>✅ Bogues résolus</h5>
+                                        v-if="filteredBugs(category.id, true).length">
+                                        <h5>✅ Bogues résolus</h5>
                                     </li>
                                     <li v-for="bug in filteredBugs(category.id, true)" :key="bug.id"
                                         class="list-group-item">
