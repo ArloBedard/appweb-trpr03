@@ -12,6 +12,7 @@ const email = computed(() => profileStore.email)
 const role = computed(() => profileStore.role)
 const name = ref('')
 const password = ref('')
+const karma = computed(() => profileStore.karma)
 
 const onError = computed(() => profileStore.onError)
 
@@ -71,28 +72,39 @@ const isRequired = (value: any) => !value ? 'Ce champ est requis.' : true;
       <Form @submit="confirmModifyProfile">
         <div class="card-body">
           <div class="mb-3">
+
             <div class="mb-3">
               <strong>Courriel :</strong>
               <div class="form-control bg-light">{{ email }}</div>
             </div>
+
             <div class="mb-3">
               <label class="form-label" for="name-input">Nom : </label>
               <Field class="form-control" id="name-input" name="name-input" type="text" :rules="isRequired"
                 v-model="name" :disabled="disableFields" />
               <ErrorMessage class="text-danger" name="name-input" />
             </div>
+
             <div class="mb-3">
               <label class="form-label" for="password-input">Mot de passe :</label>
               <Field class="form-control" id="password-input" name="password-input" type="password" :rules="isRequired"
                 v-model="password" :disabled="disableFields" />
               <ErrorMessage class="text-danger" name="password-input" />
             </div>
+
             <div class="mb-3">
               <strong>Rôle :</strong>
-              <span class="badge bg-secondary text-capitalize">{{ role }}</span>
+              <span class="badge bg-secondary text-capitalize m-1 fs-6">{{ role }}</span>
             </div>
+
+            <div class="mb-3">
+              <strong>Karma :</strong>
+              <span class="badge bg-secondary text-capitalize m-1 fs-6">{{ karma }}</span>
+            </div>
+
             <button v-if="!showConfirmation" class="btn btn-primary m-2" type="submit"
               @click="toggleConfirmation">Modifier le profile</button>
+
             <div v-else class="d-flex gap-2">
               <button class="btn btn-sm btn-secondary" @click="toggleConfirmation">
                 Annuler

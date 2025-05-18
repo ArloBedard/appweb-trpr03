@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import AddTesterComponent from '../components/AddTesterComponent.vue'
 import TesterComponent from '../components/TesterComponent.vue'
+import TesterKarmaComponent from '../components/TesterKarmaComponent.vue'
 import { useTesterStore } from '../stores/testerStore'
 
 const testerStore = useTesterStore()
@@ -32,6 +33,7 @@ async function handleDeleteTester(id: string) {
         </div>
         <div class="col-4 p-2 m-3">
             <AddTesterComponent />
+            <TesterKarmaComponent />
         </div>
     </div>
 </template>

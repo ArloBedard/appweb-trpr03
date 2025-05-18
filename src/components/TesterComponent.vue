@@ -27,10 +27,12 @@ function toggleConfirmation() {
 
 <template>
     <div class="col">
+        <!-- L'affichage des infos d'un testeur (n'inclut pas la logique de suppression) a été générée à l'aide de ChatGPT  -->
         <div class="card border-primary mb-3">
             <div class="card-body">
                 <h5 class="card-title">{{ tester.name }}</h5>
                 <p class="card-text"><strong>Email:</strong> {{ tester.email }}</p>
+                <p class="card-text"><strong>Karma:</strong> {{ tester.karma }}</p>
                 <button v-if="!showConfirmation" class="btn btn-danger" @click="toggleConfirmation">
                     Supprimer
                 </button>

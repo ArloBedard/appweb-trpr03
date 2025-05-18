@@ -5,20 +5,23 @@
       "password": "$2a$10$/U4TD6TdllwpkXLdBzoagepGDpOGcRFTS6VHAnYGNeCKsuhpEWmX2",
       "name": "Emmett Brown",
       "role": "lead",
+      "karma": 0,
       "id": 1
     },
     {
       "email": "tester1@test.com",
-      "password": "$2a$10$scjJ6kzVZ0m8w42mLi83feumy7eJpTJitoNrpCOCrE7hvSqxtYpJy",
+      "password": "$2a$10$PbKgFiEqdAGUaEXg8nIJnOhDsdoRRk1Ysw/NTVQlqZFxTzB9jQ0bm",
       "name": "John Doe",
       "role": "tester",
+      "karma": 40,
       "id": 2
     },
     {
       "email": "tester2@test.com",
-      "password": "$2a$10$u5.YHeJEtWYiDdcz2SEmKuNLn8KyFHfyO..qzbEXkzzQSLo3ahViW",
+      "password": "$2a$10$VhroPDjBbPoqx/Lu83to1eckbFkHIvcbDYbzUio3u4ypsqaFKUX6S",
       "name": "Jane Doe",
       "role": "tester",
+      "karma": 10,
       "id": 3
     }
   ],
@@ -34,10 +37,6 @@
     {
       "name": "Audio",
       "id": 3
-    },
-    {
-      "name": "Test",
-      "id": 4
     }
   ],
   "bugs": [
