@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useAuthStore } from '../stores/authStore'
+import { useProfileStore } from '../stores/profileStore'
 import { useRouter } from 'vue-router'
 
 const authStore = useAuthStore()
+const profileStore = useProfileStore()
 const router = useRouter()
 
 const isLoggedIn = computed(() => authStore.isLoggedIn)
+const role = computed(() => profileStore.role)
 
 function logout() {
   authStore.logout()
@@ -33,12 +36,16 @@ function logout() {
           :to="{ name: 'Profile' }">
           Profile
         </RouterLink>
-        <RouterLink class="nav-link" :class="{ active: $route.name == 'Testers' }" v-if="isLoggedIn"
+        <RouterLink class="nav-link" :class="{ active: $route.name == 'Testers' }" v-if="isLoggedIn && role === 'lead'"
           :to="{ name: 'Testers' }">
           Testeurs
         </RouterLink>
-        <RouterLink class="nav-link" :class="{ active: $route.name == 'Bugs' }" v-if="isLoggedIn"
-          :to="{ name: 'Bugs' }">
+        <RouterLink class="nav-link" :class="{ active: $route.name == 'LeadBugs' }" v-if="isLoggedIn && role === 'lead'"
+          :to="{ name: 'LeadBugs' }">
+          Bogues
+        </RouterLink>
+        <RouterLink class="nav-link" :class="{ active: $route.name == 'TesterBugs' }"
+          v-if="isLoggedIn && role === 'tester'" :to="{ name: 'TesterBugs' }">
           Bogues
         </RouterLink>
       </div>

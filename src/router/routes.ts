@@ -2,7 +2,8 @@ import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import LoginView from '../views/LoginView.vue'
 import TestersView from '../views/TestersView.vue'
-import BugsView from '../views/BugsView.vue'
+import LeadBugsView from '../views/LeadBugsView.vue'
+import TesterBugsView from '../views/TesterBugsView.vue'
 
 const routes = [
   {
@@ -37,9 +38,17 @@ const routes = [
     }
   },
   {
-    path: '/bugs',
-    name: 'Bugs',
-    component: BugsView,
+    path: '/bugs/lead',
+    name: 'LeadBugs',
+    component: LeadBugsView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/bugs/tester',
+    name: 'TesterBugs',
+    component: TesterBugsView,
     meta: {
       requiresAuth: true
     }

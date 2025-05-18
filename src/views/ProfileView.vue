@@ -78,11 +78,15 @@ const isRequired = (value: any) => !value ? 'Ce champ est requis.' : true;
               <div class="form-control bg-light">{{ email }}</div>
             </div>
 
-            <div class="mb-3">
+            <div v-if="role === 'lead'" class="mb-3">
               <label class="form-label" for="name-input">Nom : </label>
               <Field class="form-control" id="name-input" name="name-input" type="text" :rules="isRequired"
                 v-model="name" :disabled="disableFields" />
               <ErrorMessage class="text-danger" name="name-input" />
+            </div>
+            <div v-else class="mb-3">
+              <strong>Nom :</strong>
+              <div class="form-control bg-light">{{ name }}</div>
             </div>
 
             <div class="mb-3">

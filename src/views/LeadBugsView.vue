@@ -1,10 +1,22 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, watch } from 'vue';
 import { useBugStore } from '../stores/bugStore'
 import { useCategoryStore } from '../stores/categoryStore'
 import UnsolvedBugComponent from '../components/UnsolvedBugComponent.vue'
 import SolvedBugComponent from '../components/SolvedBugComponent.vue'
 import AddCategoryComponent from '../components/AddCategoryComponent.vue'
+import { useProfileStore } from '../stores/profileStore'
+import { useRouter } from 'vue-router'
+
+const profileStore = useProfileStore()
+
+const router = useRouter()
+
+const role = computed(() => profileStore.role)
+
+if (role.value !== 'lead') {
+    router.push({ name: 'TesterBugs' })
+}
 
 const bugsStore = useBugStore()
 const categoryStore = useCategoryStore()

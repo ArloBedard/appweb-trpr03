@@ -9,19 +9,19 @@
       "id": 1
     },
     {
-      "email": "tester1@test.com",
-      "password": "$2a$10$PbKgFiEqdAGUaEXg8nIJnOhDsdoRRk1Ysw/NTVQlqZFxTzB9jQ0bm",
+      "email": "tester@test.com",
+      "password": "$2a$10$YLl4WfgW9IcGT64opHJxgOH5824KS1MXjZHfQxFXjmJ877D3xhI6i",
       "name": "John Doe",
       "role": "tester",
-      "karma": 40,
+      "karma": 10,
       "id": 2
     },
     {
-      "email": "tester2@test.com",
-      "password": "$2a$10$VhroPDjBbPoqx/Lu83to1eckbFkHIvcbDYbzUio3u4ypsqaFKUX6S",
+      "email": "tester1@test.com",
+      "password": "$2a$10$HZ7ivu/SJAVBCzwYc5w1QOmI5UrOQp92.bf4Wo9DQPw.hU3YC73MO",
       "name": "Jane Doe",
       "role": "tester",
-      "karma": 10,
+      "karma": 30,
       "id": 3
     }
   ],

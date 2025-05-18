@@ -1,14 +1,23 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 import AddTesterComponent from '../components/AddTesterComponent.vue'
 import TesterComponent from '../components/TesterComponent.vue'
 import TesterKarmaComponent from '../components/TesterKarmaComponent.vue'
 import { useTesterStore } from '../stores/testerStore'
+import { useProfileStore } from '../stores/profileStore'
+import { useRouter } from 'vue-router'
 
 const testerStore = useTesterStore()
+const profileStore = useProfileStore()
 
+const router = useRouter()
+
+const role = computed(() => profileStore.role)
 const testers = computed(() => testerStore.testers)
 
+if (role.value !== 'lead') {
+    router.push({ name: 'Home' })
+}
 async function handleDeleteTester(id: string) {
     try {
         await testerStore.deleteTester(id)
