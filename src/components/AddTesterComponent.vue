@@ -14,7 +14,7 @@ const password = ref<string>("");
 const name = ref<string>("");
 const onError = computed(() => testerStore.onError)
 
-const isRequired = value => !value ? 'Ce champ est requis.' : true;
+const isRequired = (value: any) => !value ? 'Ce champ est requis.' : true;
 
 const createTester = async () => {
 
@@ -36,12 +36,9 @@ const createTester = async () => {
 </script>
 
 <template>
-    <div class="text-center">
+    <div class="m-4">
+        <h3>Ajouter un testeur</h3>
         <div class="row">
-            <div class="col">
-
-            </div>
-
             <div class="col">
                 <Form @submit="createTester">
                     <div class="mb-3">

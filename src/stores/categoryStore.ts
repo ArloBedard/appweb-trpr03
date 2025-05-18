@@ -26,6 +26,10 @@ export const useCategoryStore = defineStore('categoryStoreId', () => {
   async function createCategory(name: string) {
     try {
       onError.value = false
+      if (categories.value.find((category) => category.name === name)) {
+        confirm('Cette catégorie existe déjà.')
+        return
+      }
       const data = await categoryService.createCategory(name)
 
       const category: Category = {

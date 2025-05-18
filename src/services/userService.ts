@@ -22,7 +22,8 @@ async function registerUser(email: string, password: string, name: string, role:
       email,
       password,
       name,
-      role
+      role,
+      karma: 0
     })
     return response.data
   } catch (error) {
@@ -50,9 +51,33 @@ async function deleteUser(userId: any) {
   }
 }
 
+async function modifyUser(
+  userId: any,
+  email: string,
+  name: string,
+  role: string,
+  password: string,
+  karma: number
+) {
+  try {
+    const { data } = await axiosAuth.put(`${API_URL}/users/${userId}`, {
+      email,
+      password,
+      name,
+      role,
+      karma
+    })
+
+    return data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
+}
+
 export const userService = {
   getUserById,
   registerUser,
   getUsers,
-  deleteUser
+  deleteUser,
+  modifyUser
 }
