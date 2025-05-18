@@ -113,12 +113,41 @@ export const useBugStore = defineStore('bugStoreId', () => {
     }
   }
 
+  async function modifyPriority(bugId: string, priority: number) {
+    try {
+      onError.value = false
+      const bugToSolve: Bug | undefined = bugs.value.find((bug) => bug.id === bugId)
+      if (bugToSolve) bugToSolve.priority = priority
+
+      const updatedBug = await bugService.updateBug(bugId, bugToSolve)
+
+      const index = bugs.value.findIndex((bug) => bug.id === updatedBug.id)
+      if (index !== -1) {
+        bugs.value[index] = {
+          id: updatedBug.id,
+          userId: updatedBug.userId,
+          title: updatedBug.title,
+          description: updatedBug.description,
+          steps: updatedBug.steps,
+          category: updatedBug.categoryId,
+          platform: updatedBug.platform,
+          priority: updatedBug.priority,
+          solved: updatedBug.solved
+        }
+      }
+    } catch (error) {
+      onError.value = true
+      throw error
+    }
+  }
+
   return {
     getBugs,
     bugs,
     solveBug,
     onError,
     closeBug,
-    createBug
+    createBug,
+    modifyPriority
   }
 })

@@ -37,10 +37,6 @@
     {
       "name": "Audio",
       "id": 3
-    },
-    {
-      "name": "test",
-      "id": 4
     }
   ],
   "bugs": [
@@ -51,7 +47,7 @@
       "steps": "1. Lancer le jeu\n2. Aller au menu principal\n3. Choisir une résolution faible\n4. Observer le texte",
       "categoryId": 1,
       "platform": "PC",
-      "priority": 3,
+      "priority": 2,
       "solved": false,
       "id": 1
     },
@@ -63,7 +59,7 @@
       "categoryId": 2,
       "platform": "PC",
       "priority": 1,
-      "solved": true,
+      "solved": false,
       "id": 2
     },
     {
@@ -74,140 +70,19 @@
       "categoryId": 2,
       "platform": "PS5",
       "priority": 2,
-      "solved": true,
+      "solved": false,
       "id": 3
     },
     {
-      "userId": "2",
-      "title": "Test",
-      "description": "Test",
-      "steps": "Test",
-      "categoryId": 2,
-      "platform": "Test",
-      "priority": "1",
-      "solved": false,
-      "id": 4
-    },
-    {
-      "userId": "2",
-      "title": "Test",
-      "description": "Test",
-      "steps": "Test",
+      "userId": 2,
+      "title": "Audio manquant lors des cinématiques",
+      "description": "Aucune musique ou effet sonore ne joue pendant la première cinématique.",
+      "steps": "1. Lancer une nouvelle partie\n2. Laisser la cinématique se dérouler\n3. Observer l'absence de son",
       "categoryId": 3,
-      "platform": "Test",
-      "priority": "1",
-      "solved": false,
-      "id": 5
-    },
-    {
-      "userId": "2",
-      "title": "Test",
-      "description": "Test",
-      "steps": "Test",
-      "categoryId": 3,
-      "platform": "Test",
-      "priority": "1",
-      "solved": false,
-      "id": 6
-    },
-    {
-      "userId": "2",
-      "title": "Test",
-      "description": "Test",
-      "steps": "Test",
-      "categoryId": 3,
-      "platform": "Test",
-      "priority": "1",
-      "solved": false,
-      "id": 7
-    },
-    {
-      "userId": "2",
-      "title": "Test",
-      "description": "Test",
-      "steps": "Test",
-      "categoryId": 3,
-      "platform": "Test",
-      "priority": "1",
-      "solved": false,
-      "id": 8
-    },
-    {
-      "userId": "2",
-      "title": "test",
-      "description": "test",
-      "steps": "test",
-      "categoryId": 2,
-      "platform": "test",
-      "priority": "1",
-      "solved": false,
-      "id": 9
-    },
-    {
-      "userId": "2",
-      "title": "test",
-      "description": "test",
-      "steps": "test",
-      "categoryId": 2,
-      "platform": "test",
-      "priority": "1",
-      "solved": false,
-      "id": 10
-    },
-    {
-      "userId": "2",
-      "title": "test",
-      "description": "test",
-      "steps": "test",
-      "categoryId": 1,
-      "platform": "test",
-      "priority": "1",
-      "solved": false,
-      "id": 11
-    },
-    {
-      "userId": "2",
-      "title": "test",
-      "description": "test",
-      "steps": "test",
-      "categoryId": 1,
-      "platform": "test",
-      "priority": "1",
-      "solved": false,
-      "id": 12
-    },
-    {
-      "userId": "2",
-      "title": "test",
-      "description": "test",
-      "steps": "test",
-      "categoryId": 1,
-      "platform": "test",
-      "priority": 1,
-      "solved": false,
-      "id": 13
-    },
-    {
-      "userId": "2",
-      "title": "test",
-      "description": "test",
-      "steps": "test",
-      "categoryId": 1,
-      "platform": "test",
+      "platform": "Xbox",
       "priority": 2,
-      "solved": false,
-      "id": 14
-    },
-    {
-      "userId": "2",
-      "title": "test",
-      "description": "test",
-      "steps": "test",
-      "categoryId": 1,
-      "platform": "test",
-      "priority": 3,
-      "solved": false,
-      "id": 15
+      "solved": true,
+      "id": 4
     }
   ]
 }
