@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/authStore'
 import routes from './routes'
+import { useProfileStore } from '@/stores/profileStore'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,26 @@ router.beforeEach((to) => {
   } else {
     return true
   }
+})
+
+router.beforeEach(async (to, from, next) => {
+  const profileStore = useProfileStore()
+
+  if (!profileStore.role) {
+    await profileStore.getProfile()
+  }
+
+  const role = profileStore.role
+
+  if (to.name === 'LeadBugs' && role !== 'lead') {
+    return next({ name: 'TesterBugs' })
+  }
+
+  if (to.name === 'TesterBugs' && role !== 'tester') {
+    return next({ name: 'LeadBugs' })
+  }
+
+  next()
 })
 
 export default router

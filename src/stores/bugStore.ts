@@ -30,12 +30,40 @@ export const useBugStore = defineStore('bugStoreId', () => {
     }
   }
 
-  async function solveBug(id: string) {
+  async function solveBug(bugId: string) {
     try {
       onError.value = false
-      const bugToSolve: Bug | undefined = bugs.value.find((bug) => bug.id === id)
+      const bugToSolve: Bug | undefined = bugs.value.find((bug) => bug.id === bugId)
+      if (bugToSolve) bugToSolve.solved = true
 
-      const updatedBug = await bugService.updateBug(id, bugToSolve)
+      const updatedBug = await bugService.updateBug(bugId, bugToSolve)
+
+      const index = bugs.value.findIndex((bug) => bug.id === updatedBug.id)
+      if (index !== -1) {
+        bugs.value[index] = {
+          id: updatedBug.id,
+          userId: updatedBug.userId,
+          title: updatedBug.title,
+          description: updatedBug.description,
+          steps: updatedBug.steps,
+          category: updatedBug.categoryId,
+          platform: updatedBug.platform,
+          priority: updatedBug.priority,
+          solved: updatedBug.solved
+        }
+      }
+    } catch (error) {
+      onError.value = true
+      throw error
+    }
+  }
+
+  async function closeBug(bugId: string) {
+    try {
+      onError.value = false
+      const bugToSolve = bugs.value.find((bug) => bug.id === bugId)
+
+      const updatedBug = await bugService.deleteBug(bugId)
 
       const index = bugs.value.findIndex((bug) => bug.id === updatedBug.id)
       if (index !== -1) {
@@ -60,6 +88,8 @@ export const useBugStore = defineStore('bugStoreId', () => {
   return {
     getBugs,
     bugs,
-    solveBug
+    solveBug,
+    onError,
+    closeBug
   }
 })

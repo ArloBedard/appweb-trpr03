@@ -14,7 +14,7 @@ export interface Category {
 
 export interface Bug {
   id: string
-  userId: number
+  userId: string
   title: string
   description: string
   steps: string

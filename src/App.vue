@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import { useAuthStore } from './stores/authStore'
 import { RouterView } from 'vue-router'
 import NavigationBar from './components/NavigationBar.vue'
+
+const authStore = useAuthStore()
+authStore.loadPersistedToken()
+
 </script>
 
 <template>

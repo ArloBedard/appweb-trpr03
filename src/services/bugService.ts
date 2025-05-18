@@ -23,7 +23,7 @@ async function updateBug(id: any, bug: any) {
       categoryId: bug.category,
       platform: bug.platform,
       priority: bug.priority,
-      solved: true,
+      solved: bug.solved,
       id: bug.id
     })
 
@@ -33,7 +33,12 @@ async function updateBug(id: any, bug: any) {
   }
 }
 
+async function deleteBug(){
+  
+}
+
 export const bugService = {
   getBugs,
-  updateBug
+  updateBug,
+  deleteBug
 }

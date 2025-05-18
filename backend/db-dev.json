@@ -41,7 +41,7 @@
   ],
   "bugs": [
     {
-      "userId": 1,
+      "userId": 2,
       "title": "Texte coupé dans le menu principal",
       "description": "Le texte 'Nouvelle Partie' est tronqué lorsqu'on utilise une résolution 1024x768.",
       "steps": "1. Lancer le jeu\n2. Aller au menu principal\n3. Choisir une résolution faible\n4. Observer le texte",
@@ -63,7 +63,7 @@
       "id": 2
     },
     {
-      "userId": 3,
+      "userId": 1,
       "title": "Bug de collision avec les ennemis volants",
       "description": "Les ennemis volants ne détectent pas le joueur correctement.",
       "steps": "1. Approcher un ennemi volant sans bouger\n2. Observer qu'il n'attaque pas\n3. Attendre et constater l'inaction",
