@@ -64,6 +64,7 @@ export const useProfileStore = defineStore('profileStoreId', () => {
     onError,
     getProfile,
     password,
-    modifyProfile
+    modifyProfile,
+    karma
   }
 })
