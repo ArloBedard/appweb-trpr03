@@ -24,6 +24,7 @@ async function updateBug(id: any, bug: any) {
       platform: bug.platform,
       priority: bug.priority,
       solved: bug.solved,
+      img: bug.img,
       id: bug.id
     })
 
@@ -51,7 +52,8 @@ async function createBug(
   category: string,
   platform: string,
   priority: number,
-  solved: boolean
+  solved: boolean,
+  img: string
 ) {
   try {
     const response = await axiosAuth.post(`${API_URL}/bugs`, {
@@ -62,7 +64,8 @@ async function createBug(
       categoryId: category,
       platform: platform,
       priority: priority,
-      solved: solved
+      solved: solved,
+      img: img
     })
 
     return response.data

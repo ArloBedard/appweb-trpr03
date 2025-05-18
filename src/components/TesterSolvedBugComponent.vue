@@ -38,7 +38,14 @@ function getPriorityLabel(priority: number) {
         <p class="m-2"><strong>Description :</strong> {{ bug.description }}</p>
         <p class="m-2"><strong>Étapes pour reproduire :</strong> {{ bug.steps }}</p>
         <p class="m-2"><strong>Plateforme :</strong> {{ bug.platform }}</p>
+        <div v-if="bug.img">
+            <strong>Capture d'écran :</strong>
+            <div class="m-2">
+                <img :src="bug.img" alt="Capture du bogue" class="img-fluid rounded border" />
+            </div>
+        </div>
         <p class="m-2"><strong>Priorité :</strong> {{ getPriorityLabel(bug.priority) }}</p>
+
 
         <button v-if="!showConfirmation" class="btn btn-sm btn-danger mt-2" @click="toggleConfirmation()">
             Fermer le bogue

@@ -65,6 +65,12 @@ const isRequired = (value: any) => !value ? 'Ce champ est requis.' : true;
             <div class="form-control d-inline-block w-auto bg-light m-2">{{ bug.platform }}
             </div>
         </div>
+        <div v-if="bug.img">
+            <strong>Capture d'écran :</strong>
+            <div class="m-2">
+                <img :src="bug.img" alt="Capture du bogue" class="img-fluid rounded border" />
+            </div>
+        </div>
         <Form v-on:submit="confirmModifyPriority">
             <div>
                 <label class="form-label fw-bold" for="priority-input">Priorité :</label>

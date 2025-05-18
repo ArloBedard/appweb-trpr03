@@ -49,6 +49,7 @@
       "platform": "PC",
       "priority": 3,
       "solved": false,
+      "img": "https://imgur.com/boScIn1.png",
       "id": 1
     },
     {
@@ -60,6 +61,7 @@
       "platform": "PC",
       "priority": 1,
       "solved": false,
+      "img": "",
       "id": 2
     },
     {
@@ -71,6 +73,7 @@
       "platform": "PS5",
       "priority": 2,
       "solved": false,
+      "img": "",
       "id": 3
     },
     {
@@ -82,6 +85,7 @@
       "platform": "Xbox",
       "priority": 2,
       "solved": true,
+      "img": "https://imgur.com/AcM59VB.png",
       "id": 4
     }
   ]

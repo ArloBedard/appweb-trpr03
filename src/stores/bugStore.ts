@@ -24,7 +24,8 @@ export const useBugStore = defineStore('bugStoreId', () => {
         category: bug.categoryId,
         platform: bug.platform,
         priority: bug.priority,
-        solved: bug.solved
+        solved: bug.solved,
+        img: bug.img
       }))
     } catch (error) {
       onError.value = true
@@ -50,7 +51,8 @@ export const useBugStore = defineStore('bugStoreId', () => {
           category: updatedBug.categoryId,
           platform: updatedBug.platform,
           priority: updatedBug.priority,
-          solved: updatedBug.solved
+          solved: updatedBug.solved,
+          img: updatedBug.img
         }
       }
     } catch (error) {
@@ -76,7 +78,8 @@ export const useBugStore = defineStore('bugStoreId', () => {
     steps: string,
     category: string,
     platform: string,
-    priority: number
+    priority: number,
+    img: string
   ) {
     try {
       onError.value = false
@@ -91,7 +94,8 @@ export const useBugStore = defineStore('bugStoreId', () => {
         category,
         platform,
         priority,
-        false
+        false,
+        img
       )
 
       const bug: Bug = {
@@ -103,6 +107,7 @@ export const useBugStore = defineStore('bugStoreId', () => {
         platform,
         priority,
         solved: false,
+        img,
         id: data.id
       }
 
@@ -132,7 +137,8 @@ export const useBugStore = defineStore('bugStoreId', () => {
           category: updatedBug.categoryId,
           platform: updatedBug.platform,
           priority: updatedBug.priority,
-          solved: updatedBug.solved
+          solved: updatedBug.solved,
+          img: updatedBug.img
         }
       }
     } catch (error) {

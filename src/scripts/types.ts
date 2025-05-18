@@ -22,4 +22,5 @@ export interface Bug {
   platform: string
   priority: number //ex.: 1 (critique), 2 (prioritaire), 3 (important)
   solved: boolean
+  img: string
 }

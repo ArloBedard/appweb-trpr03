@@ -16,11 +16,20 @@ const steps = ref('')
 const category = ref('')
 const platform = ref('')
 const priority = ref(0)
+const img = ref('')
 const onError = computed(() => bugStore.onError)
 
 
 defineRule('isRequired', required)
 const isRequired = (value: string) => !value ? 'Ce champ est requis.' : true
+
+const priorityRange = (value: string | number) => {
+    const num = Number(value)
+    if (!value) return 'Ce champ est requis.'
+    if (isNaN(num)) return 'La priorité doit être un nombre.'
+    if (num < 1 || num > 3) return 'La priorité doit être entre 1 et 3.'
+    return true
+}
 
 const createBug = async () => {
     const result = await validate({});
@@ -29,7 +38,7 @@ const createBug = async () => {
     }
 
     try {
-        await bugStore.createBug(title.value, description.value, steps.value, category.value, platform.value, Number(priority.value))
+        await bugStore.createBug(title.value, description.value, steps.value, category.value, platform.value, Number(priority.value), img.value)
         if (onError.value) {
             confirm("Une erreur s'est produite lors de la création du bogue.")
         }
@@ -75,9 +84,10 @@ const createBug = async () => {
 
                     <div class="mb-3">
                         <label class="form-label" for="priority-input">Priorité</label>
-                        <Field class="form-control" id="priority-input" name="priority-input" type="text"
-                            :rules="isRequired" v-model="priority" />
+                        <Field class="form-control" id="priority-input" name="priority-input" type="number" min="1"
+                            max="3" :rules="priorityRange" v-model="priority" />
                         <ErrorMessage class="text-danger" name="priority-input" />
+                        <small class="form-text text-muted">1 = Critique, 2 = Prioritaire, 3 = Important</small>
                     </div>
 
                     <div class="mb-3">
@@ -91,6 +101,19 @@ const createBug = async () => {
                         </Field>
                         <ErrorMessage class="text-danger" name="category-input" />
                     </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="img-input">Image :</label>
+                        <Field class="form-control" id="img-input" name="img-input" type="text" :rules="isRequired"
+                            v-model="img" />
+                        <ErrorMessage class="text-danger" name="img-input" />
+                        <small class="form-text text-muted">
+                            <!-- Affichage des instructions à l'aide de ChatGPT. -->
+                            Utiliser Imgur et assurez-vous d'entrer le lien direct de l'image, par exemple :
+                            <code>https://i.imgur.com/xxxxx.png</code> (et non <code>imgur.com/xxxxx</code>).
+                        </small>
+                    </div>
+
                     <button class="btn btn-primary" type="submit">Créer</button>
                 </Form>
             </div>

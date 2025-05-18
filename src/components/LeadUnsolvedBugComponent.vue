@@ -37,6 +37,12 @@ function getPriorityLabel(priority: number) {
     <!-- L'affichage d'un bogue (pas la partie de résolution d'un bogue) a été générée à l'aide de ChatGPT  -->
     <strong>{{ bug.title }}</strong> (Priorité : {{ getPriorityLabel(bug.priority) }})<br />
     {{ bug.description }}<br />
+    <div v-if="bug.img">
+        <strong>Capture d'écran :</strong>
+        <div class="m-2">
+            <img :src="bug.img" alt="Capture du bogue" class="img-fluid rounded border" />
+        </div>
+    </div>
     <button v-if="!showConfirmation" class="btn btn-sm btn-primary mt-2" @click="toggleConfirmation()">
         Résoudre
     </button>
