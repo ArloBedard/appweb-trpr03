@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { Field, Form, ErrorMessage, defineRule } from 'vee-validate'
+import { Form, Field, ErrorMessage, defineRule, validate } from 'vee-validate'
 import { required } from '@vee-validate/rules'
 import { useCategoryStore } from '@/stores/categoryStore'
 
 const categoryStore = useCategoryStore()
 
-const name = ref<string>('')
+const name = ref('')
 
 defineRule('isRequired', required)
 const isRequired = (value: string) => !value ? 'Ce champ est requis.' : true

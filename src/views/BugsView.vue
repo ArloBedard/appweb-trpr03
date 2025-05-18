@@ -25,10 +25,12 @@ function filteredBugs(categoryId: string, solved: boolean) {
 
 <template>
     <h1 class="display-4 mb-4">Gestion des bogues</h1>
+
     <div class="row">
-        <div class="col-8">
+        <div class="col-7 m-3">
+
             <div class="accordion" id="bugsAccordion">
-                <div v-for="(category, index) in categories" :key="category.name">
+                <div v-for="(category, index) in categories">
                     <div class="accordion-item" :id="`heading-${index}`">
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -40,6 +42,7 @@ function filteredBugs(categoryId: string, solved: boolean) {
                         <div :id="`collapse-${index}`" class="accordion-collapse collapse"
                             data-bs-parent="#bugsAccordion">
                             <div class="accordion-body">
+                                <!-- L'affichage des bogues (pas la partie de logique du filtrage) a été générée en partie à l'aide de ChatGPT  -->
                                 <ul class="list-group">
                                     <!-- Non résolus -->
                                     <li class="list-group-item list-group-item-light"

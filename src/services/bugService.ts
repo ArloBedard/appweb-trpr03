@@ -15,7 +15,7 @@ async function getBugs() {
 
 async function updateBug(id: any, bug: any) {
   try {
-    const response = await axiosAuth.put(`${API_URL}/660/bugs/${id}`, {
+    const response = await axiosAuth.put(`${API_URL}/bugs/${id}`, {
       userId: bug.userId,
       title: bug.title,
       description: bug.description,
