@@ -20,7 +20,8 @@ export const useTesterStore = defineStore('testerStoreId', () => {
         email: email,
         name: name,
         role: role,
-        password: password
+        password: password,
+        karma: 0
       }
 
       testers.value.push(tester)
@@ -55,8 +56,30 @@ export const useTesterStore = defineStore('testerStoreId', () => {
         email: user.email,
         role: user.role,
         password: user.password,
-        id: user.id
+        id: user.id,
+        karma: user.karma
       }))
+    } catch (error) {
+      onError.value = true
+      throw error
+    }
+  }
+
+  async function modifyKarma(testerEmail: string, karma: number) {
+    try {
+      const tester = testers.value.find((tester) => tester.email === testerEmail)
+      if (tester) {
+        const newKarma = tester.karma + karma
+        await userService.modifyUser(
+          tester.id,
+          tester.email,
+          tester.name,
+          tester.role,
+          tester.password,
+          newKarma
+        )
+      }
+      onError.value = false
     } catch (error) {
       onError.value = true
       throw error
@@ -67,6 +90,7 @@ export const useTesterStore = defineStore('testerStoreId', () => {
     onError,
     createTester,
     testers,
-    deleteTester
+    deleteTester,
+    modifyKarma
   }
 })

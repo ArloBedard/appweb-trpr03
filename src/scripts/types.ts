@@ -4,6 +4,7 @@ export interface Tester {
   password: string
   name: string
   role: string
+  karma: number
 }
 
 export interface Category {
