@@ -1,31 +1,27 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 import { useBugStore } from '../stores/bugStore'
 import { useCategoryStore } from '../stores/categoryStore'
-import UnsolvedBugComponent from '../components/UnsolvedBugComponent.vue'
-import SolvedBugComponent from '../components/SolvedBugComponent.vue'
+import LeadUnsolvedBugComponent from '../components/LeadUnsolvedBugComponent.vue'
+import LeadSolvedBugComponent from '../components/LeadSolvedBugComponent.vue'
 import AddCategoryComponent from '../components/AddCategoryComponent.vue'
-import { useProfileStore } from '../stores/profileStore'
-import { useRouter } from 'vue-router'
-
-const profileStore = useProfileStore()
-
-const router = useRouter()
-
-const role = computed(() => profileStore.role)
-
-if (role.value !== 'lead') {
-    router.push({ name: 'TesterBugs' })
-}
 
 const bugsStore = useBugStore()
 const categoryStore = useCategoryStore()
 
 const categories = computed(() => categoryStore.categories)
 const bugs = computed(() => bugsStore.bugs)
+const onError = computed(() => bugsStore.onError)
 
-function handleSolveBug(bugId: string) {
-    bugsStore.solveBug(bugId)
+async function handleSolveBug(bugId: string) {
+    try {
+        await bugsStore.solveBug(bugId)
+        if (onError.value) {
+            confirm("Une erreur s'est produite lors de la modification du bogue.")
+        }
+    } catch (error) {
+        confirm("Erreur critique lors de l'accès au store.")
+    }
 }
 
 function filteredBugs(categoryId: string, solved: boolean) {
@@ -40,7 +36,6 @@ function filteredBugs(categoryId: string, solved: boolean) {
 
     <div class="row">
         <div class="col-7 m-3">
-
             <div class="accordion" id="bugsAccordion">
                 <div v-for="(category, index) in categories">
                     <div class="accordion-item" :id="`heading-${index}`">
@@ -63,7 +58,7 @@ function filteredBugs(categoryId: string, solved: boolean) {
                                     </li>
                                     <li v-for="bug in filteredBugs(category.id, false)" :key="bug.id"
                                         class="list-group-item">
-                                        <UnsolvedBugComponent :bug="bug" v-on:solve-bug="handleSolveBug(bug.id)" />
+                                        <LeadUnsolvedBugComponent :bug="bug" v-on:solve-bug="handleSolveBug(bug.id)" />
                                     </li>
 
                                     <!-- Résolus -->
@@ -73,7 +68,7 @@ function filteredBugs(categoryId: string, solved: boolean) {
                                     </li>
                                     <li v-for="bug in filteredBugs(category.id, true)" :key="bug.id"
                                         class="list-group-item text-muted" style="opacity: 0.6;">
-                                        <SolvedBugComponent :bug="bug" />
+                                        <LeadSolvedBugComponent :bug="bug" />
                                     </li>
                                 </ul>
                             </div>

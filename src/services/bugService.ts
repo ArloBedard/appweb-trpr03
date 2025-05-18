@@ -23,8 +23,49 @@ async function updateBug(id: any, bug: any) {
       categoryId: bug.category,
       platform: bug.platform,
       priority: bug.priority,
-      solved: true,
+      solved: bug.solved,
+      img: bug.img,
       id: bug.id
+    })
+
+    return response.data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
+}
+
+async function deleteBug(bugId: any) {
+  try {
+    const { data } = await axiosAuth.delete(`${API_URL}/bugs/${bugId}`)
+
+    return data
+  } catch (error) {
+    throw parseAxiosError(error)
+  }
+}
+
+async function createBug(
+  userId: string,
+  title: string,
+  description: string,
+  steps: string,
+  category: string,
+  platform: string,
+  priority: number,
+  solved: boolean,
+  img: string
+) {
+  try {
+    const response = await axiosAuth.post(`${API_URL}/bugs`, {
+      userId: userId,
+      title: title,
+      description: description,
+      steps: steps,
+      categoryId: category,
+      platform: platform,
+      priority: priority,
+      solved: solved,
+      img: img
     })
 
     return response.data
@@ -35,5 +76,7 @@ async function updateBug(id: any, bug: any) {
 
 export const bugService = {
   getBugs,
-  updateBug
+  updateBug,
+  deleteBug,
+  createBug
 }

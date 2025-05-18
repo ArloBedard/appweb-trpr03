@@ -14,7 +14,7 @@ export interface Category {
 
 export interface Bug {
   id: string
-  userId: number
+  userId: string
   title: string
   description: string
   steps: string
@@ -22,4 +22,5 @@ export interface Bug {
   platform: string
   priority: number //ex.: 1 (critique), 2 (prioritaire), 3 (important)
   solved: boolean
+  img: string
 }

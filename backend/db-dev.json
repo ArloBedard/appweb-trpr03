@@ -41,7 +41,7 @@
   ],
   "bugs": [
     {
-      "userId": 1,
+      "userId": 2,
       "title": "Texte coupé dans le menu principal",
       "description": "Le texte 'Nouvelle Partie' est tronqué lorsqu'on utilise une résolution 1024x768.",
       "steps": "1. Lancer le jeu\n2. Aller au menu principal\n3. Choisir une résolution faible\n4. Observer le texte",
@@ -49,6 +49,7 @@
       "platform": "PC",
       "priority": 3,
       "solved": false,
+      "img": "https://imgur.com/boScIn1.png",
       "id": 1
     },
     {
@@ -60,10 +61,11 @@
       "platform": "PC",
       "priority": 1,
       "solved": false,
+      "img": "",
       "id": 2
     },
     {
-      "userId": 3,
+      "userId": 1,
       "title": "Bug de collision avec les ennemis volants",
       "description": "Les ennemis volants ne détectent pas le joueur correctement.",
       "steps": "1. Approcher un ennemi volant sans bouger\n2. Observer qu'il n'attaque pas\n3. Attendre et constater l'inaction",
@@ -71,6 +73,7 @@
       "platform": "PS5",
       "priority": 2,
       "solved": false,
+      "img": "",
       "id": 3
     },
     {
@@ -82,7 +85,20 @@
       "platform": "Xbox",
       "priority": 2,
       "solved": true,
+      "img": "https://imgur.com/AcM59VB.png",
       "id": 4
+    },
+    {
+      "userId": "2",
+      "title": "werwer",
+      "description": "werwer",
+      "steps": "werwr",
+      "categoryId": 2,
+      "platform": "werwer",
+      "priority": 1,
+      "solved": false,
+      "img": "https://imgur.com/AAtb36k.png",
+      "id": 5
     }
   ]
 }
