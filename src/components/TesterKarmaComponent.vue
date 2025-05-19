@@ -69,8 +69,8 @@ const handleTakeKarma = async () => {
                 </Field>
                 <ErrorMessage class="text-danger" name="email-input" />
             </div>
-            <button class="btn btn-success  m-2" @click="handleGiveKarma">+ 10 karma</button>
-            <button class="btn btn-danger m-2" @click="handleTakeKarma">- 10 karma</button>
+            <button class="btn btn-success  m-2" name="give-karma" @click="handleGiveKarma">+ 10 karma</button>
+            <button class="btn btn-danger m-2" name="take-karma" @click="handleTakeKarma">- 10 karma</button>
         </Form>
     </div>
 </template>

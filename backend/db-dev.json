@@ -2,10 +2,10 @@
   "users": [
     {
       "email": "test@test.com",
-      "password": "$2a$10$nfjwVHn6ymA0WCZI0xdJ.elwRhVTtv2auVXI3feEWdqVax/mDtpPa",
+      "password": "$2a$10$/U4TD6TdllwpkXLdBzoagepGDpOGcRFTS6VHAnYGNeCKsuhpEWmX2",
       "name": "Emmett Brown",
       "role": "lead",
-      "karma": 20,
+      "karma": 0,
       "id": 1
     },
     {
@@ -61,8 +61,8 @@
       "categoryId": 2,
       "platform": "PC",
       "priority": 1,
-      "solved": true,
-      "solvedBy": "test@test.com",
+      "solved": false,
+      "solvedBy": "",
       "img": "",
       "id": 2
     },
@@ -74,8 +74,8 @@
       "categoryId": 2,
       "platform": "PS5",
       "priority": 2,
-      "solved": true,
-      "solvedBy": "test@test.com",
+      "solved": false,
+      "solvedBy": "",
       "img": "",
       "id": 3
     },

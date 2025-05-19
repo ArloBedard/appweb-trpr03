@@ -37,7 +37,7 @@ const createCategory = async () => {
                 <Form @submit="createCategory">
                     <div class="mb-3">
                         <label class="form-label" for="name-input">Nom de la catégorie</label>
-                        <Field id="name-input" name="name" class="form-control" type="text" v-model="name"
+                        <Field id="name-input" name="name-input" class="form-control" type="text" v-model="name"
                             :rules="isRequired" />
                         <ErrorMessage class="text-danger" name="name" />
                     </div>

@@ -34,21 +34,38 @@ function getPriorityLabel(priority: number) {
 </script>
 
 <template>
-    <!-- L'affichage d'un bogue (pas la partie de résolution d'un bogue) a été générée à l'aide de ChatGPT  -->
-    <strong>{{ bug.title }}</strong> (Priorité : {{ getPriorityLabel(bug.priority) }})<br />
-    {{ bug.description }}<br />
-    <div v-if="bug.img">
-        <strong>Capture d'écran :</strong>
-        <div class="m-2">
-            <img :src="bug.img" alt="Capture du bogue" class="img-fluid rounded border" />
+    <div class="p-3 border rounded bg-light mb-3">
+        <!-- L'affichage d'un bogue (pas la partie de résolution d'un bogue) a été générée à l'aide de ChatGPT  -->
+        <h5>{{ bug.title }}</h5>
+        <div>
+            <strong>Description :</strong>
+            <div class="form-control d-inline-block w-auto bg-light m-2"> {{ bug.description }}</div>
         </div>
-    </div>
-    <button v-if="!showConfirmation" class="btn btn-sm btn-primary mt-2" @click="toggleConfirmation()">
-        Résoudre
-    </button>
-    <div v-else class="d-flex gap-2 mt-2">
-        <button class="btn btn-sm btn-secondary" @click="toggleConfirmation()">Annuler</button>
-        <button class="btn btn-sm btn-success" @click="confirmSolve()">Confirmer</button>
+
+        <div>
+            <strong>Étapes pour reproduire :</strong>
+            <div class="form-control d-inline-block w-auto bg-light m-2">{{ bug.steps }}
+            </div>
+        </div>
+
+        <div>
+            <strong>Plateforme :</strong>
+            <div class="form-control d-inline-block w-auto bg-light m-2">{{ bug.platform }}
+            </div>
+        </div>
+        <div v-if="bug.img">
+            <strong>Capture d'écran :</strong>
+            <div class="m-2">
+                <img :src="bug.img" alt="Capture du bogue" class="img-fluid rounded border" />
+            </div>
+        </div>
+        <button v-if="!showConfirmation" class="btn btn-sm btn-primary mt-2" @click="toggleConfirmation()">
+            Résoudre
+        </button>
+        <div v-else class="d-flex gap-2 mt-2">
+            <button class="btn btn-sm btn-secondary" @click="toggleConfirmation()">Annuler</button>
+            <button class="btn btn-sm btn-success" @click="confirmSolve()">Confirmer</button>
+        </div>
     </div>
 </template>
 

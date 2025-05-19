@@ -37,11 +37,11 @@
 // }
 
 declare global {
-    namespace Cypress {
-        interface Chainable {
-            login(email: string, password: string): void;
-        }
+  namespace Cypress {
+    interface Chainable {
+      login(email: string, password: string): void
     }
+  }
 }
 
 // Cette commande est utilisé dans les tests du fichier cypress/e2e/userStories.cy.js
@@ -49,13 +49,13 @@ declare global {
 // nom de la commande___          ___ paramètres de la commande
 //                      V        V
 Cypress.Commands.add('login', (email, password) => {
-    // On retrouve ici le même code que le test "je peux me connecter - version 1".
-    cy.visit('/login')
-    cy.get('input[name=email-input]').type(email)
-    cy.get('input[name=password-input]').type(password)
-    cy.get('button[type=submit]').click()
+  // On retrouve ici le même code que le test "je peux me connecter - version 1".
+  cy.visit('/login')
+  cy.get('input[name=email-input]').type(email)
+  cy.get('input[name=password-input]').type(password)
+  cy.get('button[type=submit]').click()
 
-    cy.contains(/déconnecter/i)
+  cy.contains(/déconnecter/i)
 })
 
 export {}
