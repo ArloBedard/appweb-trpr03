@@ -23,6 +23,62 @@
       "role": "tester",
       "karma": 30,
       "id": 3
+    },
+    {
+      "email": "tester2@test.com",
+      "password": "$2a$10$/u3TfKHz8PxLM6EXS0XMEOLAG/GdGmx5692DxIHXa2rMKHoqEJNjW",
+      "name": "Test",
+      "role": "tester",
+      "karma": 0,
+      "id": 4
+    },
+    {
+      "email": "tester3@test.com",
+      "password": "$2a$10$fjDob9j6UmW/GrdVA7WSO.1u3ZmwkAKFjNsCUBph882EpMku5VhG6",
+      "name": "Test",
+      "role": "tester",
+      "karma": 0,
+      "id": 5
+    },
+    {
+      "email": "tester4@test.com",
+      "password": "$2a$10$y21znoQgAvHe.N8lbKfsKubVOd88PInJwUWz0e3mKVOnSXa80seYS",
+      "name": "Test",
+      "role": "tester",
+      "karma": 0,
+      "id": 6
+    },
+    {
+      "email": "tester5@test.com",
+      "password": "$2a$10$H5YfnXtehOHrnTsKHRjqe.wgXvLPOQzFkEy0ofOJah3YtDml2HqSu",
+      "name": "Test",
+      "role": "tester",
+      "karma": 0,
+      "id": 7
+    },
+    {
+      "email": "tester6@test.com",
+      "password": "$2a$10$N6xPf66dBkgZy0qpyuE3retOMaEnVJkFFcHFqRJXrPK7RJU2XJDNe",
+      "name": "Test",
+      "role": "tester",
+      "karma": 0,
+      "id": 8
+    },
+    {
+      "email": "tester7@test.com",
+      "password": "$2a$10$4zzWxMOvysb1QEMO4OWAluMsHvDGm6p4iVg4IzZimtqs2f4cmczDS",
+      "name": "Test",
+      "role": "tester",
+      "karma": 0,
+      "id": 9
+    },
+    {
+      "email": "tester8@test.com",
+      "password": "$2a$10$06GS46TDIjhPG03OMVeDce85uDnB9vSJCNtjsPlMZwJkWGHAnmg9O",
+      "name": "Test",
+      "role": "tester",
+      "karma": 0,
+      "id": 10
     }
   ],
   "categories": [

@@ -1,5 +1,21 @@
 # trpr03
 
+# Utilisation d'IA
+
+J'ai utilisé ChatGPT à certains endroits pour générer des affichages esthétiques de données (tous les endroits sont indiqués dans le code)
+ainsi que pour générer des données dans la bd initiale (bogues).
+
+# Informations de loging
+
+## Lead
+
+Courriel : test@test.com
+Mot de passe : test
+
+## Testeur
+
+Les testeurs ont tous le même mot de passe : test
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
