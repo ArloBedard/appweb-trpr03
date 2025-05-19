@@ -1,11 +1,104 @@
 {
   "users": [
     {
-      "email": "mon@courriel.com",
-      "password": "$2a$10$WoVaR5cZ2CaImTsXvAglpOUcODx5MODtZR7KSnxcLTL2kg3HVOQIa",
-      "name": "Bruce Lee",
+      "email": "test@test.com",
+      "password": "$2a$10$/U4TD6TdllwpkXLdBzoagepGDpOGcRFTS6VHAnYGNeCKsuhpEWmX2",
+      "name": "Emmett Brown",
+      "role": "lead",
+      "karma": 0,
       "id": 1
+    },
+    {
+      "email": "tester@test.com",
+      "password": "$2a$10$YLl4WfgW9IcGT64opHJxgOH5824KS1MXjZHfQxFXjmJ877D3xhI6i",
+      "name": "John Doe",
+      "role": "tester",
+      "karma": 10,
+      "id": 2
+    },
+    {
+      "email": "tester1@test.com",
+      "password": "$2a$10$HZ7ivu/SJAVBCzwYc5w1QOmI5UrOQp92.bf4Wo9DQPw.hU3YC73MO",
+      "name": "Jane Doe",
+      "role": "tester",
+      "karma": 30,
+      "id": 3
+    },
+    {
+      "email": "mon@courriel.com",
+      "password": "$2a$10$upxnjvDng8q9VkTieaELr.nTEkoSFa9O2Aa4fSAtrpndHJlsAgvIa",
+      "name": "Bruce Lee",
+      "role": "tester",
+      "karma": 10,
+      "id": 4
     }
   ],
-  "comments": []
+  "categories": [
+    {
+      "name": "Visuel",
+      "id": 1
+    },
+    {
+      "name": "Gameplay",
+      "id": 2
+    },
+    {
+      "name": "Audio",
+      "id": 3
+    }
+  ],
+  "bugs": [
+    {
+      "userId": 2,
+      "title": "Texte coupé dans le menu principal",
+      "description": "Le texte 'Nouvelle Partie' est tronqué lorsqu'on utilise une résolution 1024x768.",
+      "steps": "1. Lancer le jeu\n2. Aller au menu principal\n3. Choisir une résolution faible\n4. Observer le texte",
+      "categoryId": 1,
+      "platform": "PC",
+      "priority": 3,
+      "solved": false,
+      "solvedBy": "",
+      "img": "https://imgur.com/boScIn1.png",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "title": "Le personnage traverse les murs",
+      "description": "En courant vers le coin nord-ouest de la carte, le personnage passe à travers le mur.",
+      "steps": "1. Se rendre au coin nord-ouest de la carte\n2. Courir contre le mur\n3. Le personnage passe au travers",
+      "categoryId": 2,
+      "platform": "PC",
+      "priority": 1,
+      "solved": false,
+      "solvedBy": "",
+      "img": "",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "title": "Bug de collision avec les ennemis volants",
+      "description": "Les ennemis volants ne détectent pas le joueur correctement.",
+      "steps": "1. Approcher un ennemi volant sans bouger\n2. Observer qu'il n'attaque pas\n3. Attendre et constater l'inaction",
+      "categoryId": 2,
+      "platform": "PS5",
+      "priority": 2,
+      "solved": false,
+      "solvedBy": "",
+      "img": "",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "title": "Audio manquant lors des cinématiques",
+      "description": "Aucune musique ou effet sonore ne joue pendant la première cinématique.",
+      "steps": "1. Lancer une nouvelle partie\n2. Laisser la cinématique se dérouler\n3. Observer l'absence de son",
+      "categoryId": 3,
+      "platform": "Xbox",
+      "priority": 2,
+      "solved": true,
+      "solvedBy": "test@test.com",
+      "img": "https://imgur.com/AcM59VB.png",
+      "id": 4
+    }
+  ]
 }

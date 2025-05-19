@@ -106,7 +106,7 @@ const isRequired = (value: any) => !value ? 'Ce champ est requis.' : true;
               <span class="badge bg-secondary text-capitalize m-1 fs-6">{{ karma }}</span>
             </div>
 
-            <button v-if="!showConfirmation" class="btn btn-primary m-2" type="submit"
+            <button v-if="!showConfirmation" class="btn btn-primary m-2" type="submit" name="modify"
               @click="toggleConfirmation">Modifier le profile</button>
 
             <div v-else class="d-flex gap-2">
