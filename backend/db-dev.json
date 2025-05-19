@@ -2,10 +2,10 @@
   "users": [
     {
       "email": "test@test.com",
-      "password": "$2a$10$/U4TD6TdllwpkXLdBzoagepGDpOGcRFTS6VHAnYGNeCKsuhpEWmX2",
+      "password": "$2a$10$nfjwVHn6ymA0WCZI0xdJ.elwRhVTtv2auVXI3feEWdqVax/mDtpPa",
       "name": "Emmett Brown",
       "role": "lead",
-      "karma": 0,
+      "karma": 20,
       "id": 1
     },
     {
@@ -49,6 +49,7 @@
       "platform": "PC",
       "priority": 3,
       "solved": false,
+      "solvedBy": "",
       "img": "https://imgur.com/boScIn1.png",
       "id": 1
     },
@@ -60,7 +61,8 @@
       "categoryId": 2,
       "platform": "PC",
       "priority": 1,
-      "solved": false,
+      "solved": true,
+      "solvedBy": "test@test.com",
       "img": "",
       "id": 2
     },
@@ -72,7 +74,8 @@
       "categoryId": 2,
       "platform": "PS5",
       "priority": 2,
-      "solved": false,
+      "solved": true,
+      "solvedBy": "test@test.com",
       "img": "",
       "id": 3
     },
@@ -85,20 +88,9 @@
       "platform": "Xbox",
       "priority": 2,
       "solved": true,
+      "solvedBy": "test@test.com",
       "img": "https://imgur.com/AcM59VB.png",
       "id": 4
-    },
-    {
-      "userId": "2",
-      "title": "werwer",
-      "description": "werwer",
-      "steps": "werwr",
-      "categoryId": 2,
-      "platform": "werwer",
-      "priority": 1,
-      "solved": false,
-      "img": "https://imgur.com/AAtb36k.png",
-      "id": 5
     }
   ]
 }

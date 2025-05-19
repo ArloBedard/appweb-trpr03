@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { Tester } from '../scripts/types'
+import type { User } from '../scripts/types'
 
 const props = defineProps<{
-    tester: Tester
+    tester: User
 }>();
 
 const emit = defineEmits<{

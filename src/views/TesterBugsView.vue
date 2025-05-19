@@ -6,6 +6,7 @@ import TesterUnsolvedBugComponent from '../components/TesterUnsolvedBugComponent
 import TesterSolvedBugComponent from '../components/TesterSolvedBugComponent.vue'
 import AddBugComponent from '../components/AddBugComponent.vue'
 import { useAuthStore } from '@/stores/authStore'
+import LeadKarmaComponent from '../components/LeadKarmaComponent.vue'
 
 const authStore = useAuthStore()
 
@@ -81,6 +82,7 @@ async function handleCloseBug(bugId: string) {
 
         <div class="col-4 m-3">
             <AddBugComponent />
+            <LeadKarmaComponent />
         </div>
     </div>
 </template>

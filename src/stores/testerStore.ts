@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { userService } from '../services/userService'
-import type { Tester } from '../scripts/types'
+import type { User } from '../scripts/types'
 
 export const useTesterStore = defineStore('testerStoreId', () => {
-  const testers = ref<Tester[]>([])
+  const testers = ref<User[]>([])
   const onError = ref(false)
 
   getTesters()
@@ -15,7 +15,7 @@ export const useTesterStore = defineStore('testerStoreId', () => {
       const role = 'tester'
       const userData = await userService.registerUser(email, password, name, role)
 
-      const tester: Tester = {
+      const tester: User = {
         id: userData.user?.id,
         email: email,
         name: name,
