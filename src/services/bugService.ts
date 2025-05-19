@@ -24,6 +24,7 @@ async function updateBug(id: any, bug: any) {
       platform: bug.platform,
       priority: bug.priority,
       solved: bug.solved,
+      solvedBy: bug.solvedBy,
       img: bug.img,
       id: bug.id
     })

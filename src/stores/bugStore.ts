@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { bugService } from '../services/bugService'
 import type { Bug } from '../scripts/types'
 import { useAuthStore } from './authStore'
+import { useProfileStore } from './profileStore'
 
 export const useBugStore = defineStore('bugStoreId', () => {
   const onError = ref(false)
@@ -25,6 +26,7 @@ export const useBugStore = defineStore('bugStoreId', () => {
         platform: bug.platform,
         priority: bug.priority,
         solved: bug.solved,
+        solvedBy: bug.solvedBy,
         img: bug.img
       }))
     } catch (error) {
@@ -36,7 +38,13 @@ export const useBugStore = defineStore('bugStoreId', () => {
     try {
       onError.value = false
       const bugToSolve: Bug | undefined = bugs.value.find((bug) => bug.id === bugId)
-      if (bugToSolve) bugToSolve.solved = true
+      const profileStore = useProfileStore()
+      await profileStore.getProfile()
+
+      if (bugToSolve) {
+        bugToSolve.solved = true
+        bugToSolve.solvedBy = profileStore.email
+      }
 
       const updatedBug = await bugService.updateBug(bugId, bugToSolve)
 
@@ -52,6 +60,7 @@ export const useBugStore = defineStore('bugStoreId', () => {
           platform: updatedBug.platform,
           priority: updatedBug.priority,
           solved: updatedBug.solved,
+          solvedBy: updatedBug.solvedBy,
           img: updatedBug.img
         }
       }
@@ -107,6 +116,7 @@ export const useBugStore = defineStore('bugStoreId', () => {
         platform,
         priority,
         solved: false,
+        solvedBy: '',
         img,
         id: data.id
       }
@@ -138,6 +148,7 @@ export const useBugStore = defineStore('bugStoreId', () => {
           platform: updatedBug.platform,
           priority: updatedBug.priority,
           solved: updatedBug.solved,
+          solvedBy: updatedBug.solvedBy,
           img: updatedBug.img
         }
       }

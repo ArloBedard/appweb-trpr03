@@ -1,4 +1,4 @@
-export interface Tester {
+export interface User {
   id: string
   email: string
   password: string
@@ -22,5 +22,6 @@ export interface Bug {
   platform: string
   priority: number //ex.: 1 (critique), 2 (prioritaire), 3 (important)
   solved: boolean
+  solvedBy: string
   img: string
 }

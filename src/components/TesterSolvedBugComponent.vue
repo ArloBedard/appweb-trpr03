@@ -45,7 +45,7 @@ function getPriorityLabel(priority: number) {
             </div>
         </div>
         <p class="m-2"><strong>Priorité :</strong> {{ getPriorityLabel(bug.priority) }}</p>
-
+        <p class="m-2"><strong>Résolu par :</strong> {{ bug.solvedBy }}</p>
 
         <button v-if="!showConfirmation" class="btn btn-sm btn-danger mt-2" @click="toggleConfirmation()">
             Fermer le bogue
