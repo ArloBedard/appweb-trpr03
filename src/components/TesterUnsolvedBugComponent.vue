@@ -47,6 +47,7 @@ const isRequired = (value: any) => !value ? 'Ce champ est requis.' : true;
 </script>
 
 <template>
+    <!-- L'affichage d'un bogue non résolu (pas la partie de modification de la priorité ni de capture d'écran) a été générée à l'aide de ChatGPT  -->
     <div class="p-3 border rounded bg-light mb-3">
         <h5>{{ bug.title }}</h5>
         <div>

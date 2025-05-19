@@ -23,19 +23,11 @@ function toggleConfirmation() {
     showConfirmation.value = !showConfirmation.value
 }
 
-function getPriorityLabel(priority: number) {
-    switch (priority) {
-        case 1: return 'Critique';
-        case 2: return 'Prioritaire';
-        case 3: return 'Important';
-    }
-}
-
 </script>
 
 <template>
+    <!-- L'affichage d'un bogue non résolu (pas la partie de résolution d'un bogue ni de capture d'écran) a été générée à l'aide de ChatGPT  -->
     <div class="p-3 border rounded bg-light mb-3">
-        <!-- L'affichage d'un bogue (pas la partie de résolution d'un bogue) a été générée à l'aide de ChatGPT  -->
         <h5>{{ bug.title }}</h5>
         <div>
             <strong>Description :</strong>

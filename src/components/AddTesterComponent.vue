@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useAuthStore } from '@/stores/authStore';
 import { computed, ref } from 'vue';
 import { Field, Form, ErrorMessage, defineRule, validate } from 'vee-validate'
 import { required } from '@vee-validate/rules'
@@ -9,9 +8,9 @@ const testerStore = useTesterStore()
 
 defineRule('isRequired', required);
 
-const email = ref<string>("");
-const password = ref<string>("");
-const name = ref<string>("");
+const email = ref("");
+const password = ref("");
+const name = ref("");
 const onError = computed(() => testerStore.onError)
 
 const isRequired = (value: any) => !value ? 'Ce champ est requis.' : true;

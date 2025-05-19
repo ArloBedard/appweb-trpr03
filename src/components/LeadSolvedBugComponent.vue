@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Bug } from '../scripts/types'
 
-const props = defineProps<{
+defineProps<{
     bug: Bug
 }>();
 
