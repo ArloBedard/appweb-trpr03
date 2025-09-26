@@ -2,8 +2,8 @@
   "users": [
     {
       "email": "test@test.com",
-      "password": "$2a$10$/U4TD6TdllwpkXLdBzoagepGDpOGcRFTS6VHAnYGNeCKsuhpEWmX2",
-      "name": "Emmett Brown",
+      "password": "$2a$10$HlRlccwf.f388SYNfC/oueVfnusnsw6tVd0IBxbocNgeJgaoSKQX.",
+      "name": "Emmett chailler",
       "role": "lead",
       "karma": 0,
       "id": 1
@@ -23,14 +23,6 @@
       "role": "tester",
       "karma": 30,
       "id": 3
-    },
-    {
-      "email": "tester2@test.com",
-      "password": "$2a$10$/u3TfKHz8PxLM6EXS0XMEOLAG/GdGmx5692DxIHXa2rMKHoqEJNjW",
-      "name": "Test",
-      "role": "tester",
-      "karma": 0,
-      "id": 4
     },
     {
       "email": "tester3@test.com",
@@ -74,10 +66,10 @@
     },
     {
       "email": "tester8@test.com",
-      "password": "$2a$10$06GS46TDIjhPG03OMVeDce85uDnB9vSJCNtjsPlMZwJkWGHAnmg9O",
+      "password": "$2a$10$NbCJ1le9fWwgOwfn7fbDEuy9lRW7kCVRox4Qf1lYFDeppJofehF.S",
       "name": "Test",
       "role": "tester",
-      "karma": 0,
+      "karma": 20,
       "id": 10
     }
   ],
@@ -93,6 +85,10 @@
     {
       "name": "Audio",
       "id": 3
+    },
+    {
+      "name": "arlo caca",
+      "id": 4
     }
   ],
   "bugs": [
@@ -104,23 +100,10 @@
       "categoryId": 1,
       "platform": "PC",
       "priority": 3,
-      "solved": false,
-      "solvedBy": "",
+      "solved": true,
+      "solvedBy": "test@test.com",
       "img": "https://imgur.com/boScIn1.png",
       "id": 1
-    },
-    {
-      "userId": 2,
-      "title": "Le personnage traverse les murs",
-      "description": "En courant vers le coin nord-ouest de la carte, le personnage passe à travers le mur.",
-      "steps": "1. Se rendre au coin nord-ouest de la carte\n2. Courir contre le mur\n3. Le personnage passe au travers",
-      "categoryId": 2,
-      "platform": "PC",
-      "priority": 1,
-      "solved": false,
-      "solvedBy": "",
-      "img": "",
-      "id": 2
     },
     {
       "userId": 1,
@@ -130,8 +113,8 @@
       "categoryId": 2,
       "platform": "PS5",
       "priority": 2,
-      "solved": false,
-      "solvedBy": "",
+      "solved": true,
+      "solvedBy": "test@test.com",
       "img": "",
       "id": 3
     },
@@ -147,6 +130,19 @@
       "solvedBy": "test@test.com",
       "img": "https://imgur.com/AcM59VB.png",
       "id": 4
+    },
+    {
+      "userId": "2",
+      "title": "wrer",
+      "description": "ewrwer",
+      "steps": "werwer",
+      "categoryId": 2,
+      "platform": "were",
+      "priority": 2,
+      "solved": false,
+      "solvedBy": "",
+      "img": "https://imgur.com/jkhkcDS.png",
+      "id": 5
     }
   ]
 }

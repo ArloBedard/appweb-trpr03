@@ -9,6 +9,7 @@ const bugStore = useBugStore()
 const categoryStore = useCategoryStore()
 
 const categories = computed(() => categoryStore.categories)
+console.log(categories.value)
 
 const title = ref('')
 const description = ref('')
